@@ -1,0 +1,111 @@
+/** \brief Konvertiert einen Buchstaben (A-Z), eine Zahl (0-9) oder ein Satzzeichen in Morsecode.
+ *  \param sChar Zu konvertierender Buchstabe / Zahl / Satzzeichen als String
+ *  \return Morsecode als String. "." = Dit; "-" = Dah
+ */
+String charToMorse(String sChar) {
+    sChar.toUpperCase();
+
+    if (sChar.equals("A")) {
+        return ".-";
+    } else if (sChar.equals("B")) {
+        return "-...";
+    } else if (sChar.equals("C")) {
+        return "-.-.";
+    } else if (sChar.equals("D")) {
+        return "-..";
+    } else if (sChar.equals("E")) {
+        return ".";
+    } else if (sChar.equals("F")) {
+        return "..-.";
+    } else if (sChar.equals("G")) {
+        return "--.";
+    } else if (sChar.equals("H")) {
+        return "....";
+    } else if (sChar.equals("I")) {
+        return "..";
+    } else if (sChar.equals("J")) {
+        return ".---";
+    } else if (sChar.equals("K")) {
+        return "-.-";
+    } else if (sChar.equals("L")) {
+        return ".-..";
+    } else if (sChar.equals("M")) {
+        return "--";
+    } else if (sChar.equals("N")) {
+        return "-.";
+    } else if (sChar.equals("O")) {
+        return "---";
+    } else if (sChar.equals("P")) {
+        return ".--.";
+    } else if (sChar.equals("Q")) {
+        return "--.-";
+    } else if (sChar.equals("R")) {
+        return ".-.";
+    } else if (sChar.equals("S")) {
+        return "...";
+    } else if (sChar.equals("T")) {
+        return "-";
+    } else if (sChar.equals("U")) {
+        return "..-";
+    } else if (sChar.equals("V")) {
+        return "...-";
+    } else if (sChar.equals("W")) {
+        return ".--";
+    } else if (sChar.equals("X")) {
+        return "-..-";
+    } else if (sChar.equals("Y")) {
+        return "-.--";
+    } else if (sChar.equals("Z")) {
+        return "--..";
+    } else if (sChar.equals("1")) {
+        return ".----";
+    } else if (sChar.equals("2")) {
+        return "..---";
+    } else if (sChar.equals("3")) {
+        return "...--";
+    } else if (sChar.equals("4")) {
+        return "....-";
+    } else if (sChar.equals("5")) {
+        return ".....";
+    } else if (sChar.equals("6")) {
+        return "-....";
+    } else if (sChar.equals("7")) {
+        return "--...";
+    } else if (sChar.equals("8")) {
+        return "---..";
+    } else if (sChar.equals("9")) {
+        return "----.";
+    } else if (sChar.equals("0")) {
+        return "-----";
+    } else if (sChar.equals(".")) {
+        return ".-.-.-";
+    } else if (sChar.equals(",")) {
+        return "--..--";
+    } else if (sChar.equals(":")) {
+        return "---...";
+    } else if (sChar.equals(";")) {
+        return "-.-.-.";
+    } else if (sChar.equals("?")) {
+        return "..--..";
+    } else if (sChar.equals("-")) {
+        return "-....-";
+    } else if (sChar.equals("_")) {
+        return "..--.-";
+    } else if (sChar.equals("(")) {
+        return "-.--.";
+    } else if (sChar.equals(")")) {
+        return "-.--.-";
+    } else if (sChar.equals("'")) {
+        return ".----.";
+    } else if (sChar.equals("=")) {
+        return "-...-";
+    } else if (sChar.equals("+")) {
+        return ".-.-.";
+    } else if (sChar.equals("/")) {
+        return "-..-.";
+    } else if (sChar.equals("@")) {
+        return ".--.-.";
+    } else {
+        return "";
+    }
+}
