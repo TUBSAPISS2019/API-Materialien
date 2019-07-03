@@ -6,7 +6,16 @@ LEDControl::LEDControl(QWidget *parent) :
     ui(new Ui::LEDControl)
 {
     ui->setupUi(this);
+    QObject::connect(this, SIGNAL(sendColor(char, char)),
+                     &m_arduinoInterface, SLOT(sendColorToArduino(char, char)));
 
+    QObject::connect(&m_arduinoInterface, SIGNAL(updateCntSent(int)),
+                     this, SLOT(updateCntSent(int)));
+    QObject::connect(&m_arduinoInterface, SIGNAL(updateCntReceived(int)),
+                     this, SLOT(updateCntReceived(int)));
+
+    updateCntSent(0);
+    updateCntReceived(0);
     reset();
 }
 
@@ -97,4 +106,14 @@ void LEDControl::setSlidersEnabled(bool bEnabled)
     ui->hsRed->setEnabled(bEnabled);
     ui->hsGreen->setEnabled(bEnabled);
     ui->hsBlue->setEnabled(bEnabled);
+}
+
+void LEDControl::updateCntSent(int iCount)
+{
+    ui->lbl_cntSent->setText("Gesendet: " + QString::number(iCount));
+}
+
+void LEDControl::updateCntReceived(int iCount)
+{
+    ui->lbl_cntReceived->setText("Empfangen: " + QString::number(iCount));
 }

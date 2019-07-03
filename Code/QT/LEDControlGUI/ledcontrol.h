@@ -2,6 +2,7 @@
 #define LEDCONTROL_H
 
 #include <QWidget>
+#include "arduinointerface.h"
 
 namespace Ui {
 class LEDControl;
@@ -25,6 +26,7 @@ public:
 
 private:
     Ui::LEDControl *ui;
+    ArduinoInterface m_arduinoInterface;
 
     void onSliderMoved(LEDColor sliderColor, int value);
     void setSlidersEnabled(bool bEnabled);
@@ -33,6 +35,7 @@ private:
 
 signals:
     void sendColor(char colorIdentifier, char colorValue);
+
 private slots:
     void on_hsRed_valueChanged(int value);
     void on_hsBlue_valueChanged(int value);
@@ -40,6 +43,9 @@ private slots:
     void on_pbClose_clicked();
     void on_pbOnOff_clicked();
     void on_pbReset_clicked();
+
+    void updateCntSent(int iCount);
+    void updateCntReceived(int iCount);
 };
 
 #endif // LEDCONTROL_H
